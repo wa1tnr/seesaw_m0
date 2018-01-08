@@ -1,12 +1,19 @@
+// Mon Jan  8 20:10:36 UTC 2018
+// 4737-a0c-00c- // +cribs
+
+// fastenblink prior  K4B
+
+// MONDIALE
+
+// KREFL GLUNE
+// TAAVLOPHE
+
+// previous timestamp:
 // Mon Jan  8 19:40:03 UTC 2018
 // 4737-a0c-00b- // version bump - pared upload - minimal doco
 
 // Mon Jan  8 18:18:41 UTC 2018
 // 4737-a0c-00a- // out of sequence - shred taken from gen-exp branch
-
-// KREFL GLUNE
-
-// TAAVLOPHE
 
 // $ head -3 ./ainsuForth-gen-exp/ainsuForth-gen-exp.ino 
 // Sat Dec 16 03:49:57 UTC 2017

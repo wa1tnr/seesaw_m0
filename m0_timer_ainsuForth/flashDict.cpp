@@ -1,6 +1,19 @@
+// Mon Jan  8 20:10:36 UTC 2018
+// 4737-a0c-00c- // +cribs
+
+// quick add - cribs word to the flash dictionary
+
 // Thu Jul  6 19:10:43 UTC 2017
 // 0103-a0c-01-
 // 4735-b0a-00-
+
+// The program compiles in Arduino IDE and presents a forth dictionary
+// resident in flashROM (the program, as it were).
+
+// There also exists words compiled at runtime, that reside in SRAM.
+
+// Hence, the distinction.  'flash' dictionary vs the SRAM dictionary.
+
 
 #include <Arduino.h>
 #include "yaffa.h"
@@ -223,6 +236,7 @@ const flashEntry_t flashDict[] = {
 //   { endof_str,          _endof,           IMMEDIATE + COMP_ONLY },    // CAL
 //   { endcase_str,        _endcase,         IMMEDIATE + COMP_ONLY },    // CAL
   { help_str,           _help,            NORMAL },
+  { cribs_str,          _cribs,           NORMAL }, // the cribs word definition was added 08 Jan 2018
 #endif
 
 #ifdef DOUBLE_SET

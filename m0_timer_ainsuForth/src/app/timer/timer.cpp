@@ -1,3 +1,12 @@
+// Mon Jan  8 20:10:36 UTC 2018
+// 4737-a0c-00c- // +cribs
+
+// bugfix for this one file, timer.cpp:                  08 Jan 2018 20:35 UTC
+
+// dStack_push(21); // need 21 bright for the selected, timer-controlled colors
+// This is removed and was an artifact of NeoPixel specific code.  Notice the
+// stack kept growing with a bunch of '21' entries.  This was the offending line.
+
 // Thu Jul  6 19:10:43 UTC 2017
 // 0103-a0c-01-
 // 4735-b0a-00-
@@ -100,11 +109,11 @@ in forth:
 
 decimal  ( an immediate word )
 
-: fastblink  6 gendiv     4 period0   timers ;
-: medblink   6 gendiv     9 period0   timers ;
-: slowblink  6 gendiv    14 period0   timers ;
-: vsloblink  6 gendiv    44 period0   timers ;
-: usloblink  6 gendiv   122 period0   timers ;
+: fastblink  6 gendiv     4 per0   timers ;
+: medblink   6 gendiv     9 per0   timers ;
+: slowblink  6 gendiv    14 per0   timers ;
+: vsloblink  6 gendiv    44 per0   timers ;
+: usloblink  6 gendiv   122 per0   timers ;
 
 
 */
@@ -224,9 +233,13 @@ decimal  ( an immediate word )
   // The timer will display on the onboard NeoPixel,
   //    to further visualize it, as a demonstration.
 
-  dStack_push(21); // need 21 bright for the selected, timer-controlled colors
+  // bugfix: remove the push to the data stack - not needed without NeoPixel vocabulary/events coded.
+  // dStack_push(21); // need 21 bright for the selected, timer-controlled colors
   // 07 Jan 2018: NeoPixel payload .. maybe.  Depends on presence of NPX hardware (can be external to the target board, if provided for elsewhere).
   // _npxBright();    // pixels.setBrightness(dStack_pop());
+
+  // candidate payload statement follows on the next line - 08 Jan 2018 20:44 UTC:
+  // pinToggle(); // payload // led pin 13
 }
 
 
