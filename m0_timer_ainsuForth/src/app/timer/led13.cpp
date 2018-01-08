@@ -1,3 +1,6 @@
+// Mon Jan  8 19:54:09 UTC 2018
+// wanted shorter pulse on LED 13
+
 // Thu Jul  6 19:10:43 UTC 2017
 // 0103-a0c-01-
 // 4735-b0a-00-
@@ -38,8 +41,18 @@ void brightenlight(void) {
   delay(220);
 }
 
+void brightenlightShort(void) {
+  digitalWrite(13, 1); // turn on
+  delay(5);
+}
+
 void blinkenlight(void) {
   brightenlight();
+  darkenlight();
+}
+
+void blinkenlightShort(void) {
+  brightenlightShort();
   darkenlight();
 }
 

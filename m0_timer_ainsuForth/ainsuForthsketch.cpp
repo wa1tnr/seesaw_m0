@@ -143,6 +143,7 @@ uint8_t base;  // stores the number conversion radix
 // }
 
 extern void blinkenlight(void);
+extern void blinkenlightShort(void); // shorter duration pulse on LED 13 - 08 Jan 2018
 
 void introduction() {
 //     blinkenlight(); Serial.print(".");
@@ -252,6 +253,9 @@ void blink_m(void) {
   delay(1200);
   _mblink(); // magenta 100 ms blip on neoPixel
   delay(1100);
+#else
+  blinkenlightShort(); // 08 Jan 2018 substitute code for no NeoPixel compiled support.  Blink D13 LED instead.
+  // blink LED 13
 #endif
   delay(100);
  // 2500 ms is 24 pulses per minute
@@ -277,6 +281,13 @@ void setup(void) {
 
   // magentaDull();
   Serial.begin(19200);        // Open serial communications:
+
+
+
+
+
+
+
   // Serial.begin(57600);     // Open serial communications:
   // Serial.begin(115200);    // Open serial communications:
   while (!Serial) {
@@ -299,7 +310,7 @@ void setup(void) {
   pHere = &forthSpace[0];
   pOldHere = pHere;
   
-  Serial.print("\n warm boot message - early bird.  //  KEPOK  PIBOK--HABILLEAUX"); // instant confirmation
+  Serial.print("\n warm boot message - early bird.  //  TAAVLOPHE   KEPOK--HABILLEAUX"); // instant confirmation
 
   delay(9 * 100); // 900 ms - optional - useful when coded for a 4+ second delay
                   // to give the operator time to task switch from upload
