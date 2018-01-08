@@ -1,19 +1,25 @@
-// Mon Jan  8 21:33:44 UTC 2018
-// 4737-a0c-00e- // +cribs
+// Mon Jan  8 22:01:58 UTC 2018
+// 4737-a0c-00f- // +cribs +dump_cribs +freq
 
-// landed safely.  acha.
+// version bump.
+
+// cyan teppe
+
 // SHOWANTELLEVISION
 
-// + dump cribs
+// MONDIALE
 
 // fastenblink prior  K4B
-
-// MONDIALE
 
 // KREFL GLUNE
 // TAAVLOPHE
 
+
 // previous timestamp:
+// Mon Jan  8 21:33:44 UTC 2018
+// 4737-a0c-00e- // +cribs
+
+
 // Mon Jan  8 19:40:03 UTC 2018
 // 4737-a0c-00b- // version bump - pared upload - minimal doco
 
