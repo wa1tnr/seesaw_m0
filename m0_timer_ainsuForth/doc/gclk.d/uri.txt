@@ -1,0 +1,6 @@
+
+
+~/.arduino15/packages/arduino/tools/CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/component/gclk.h
+
+sub: tools/CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/component/gclk.h
+
