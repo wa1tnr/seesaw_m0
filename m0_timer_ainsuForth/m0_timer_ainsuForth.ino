@@ -1,5 +1,10 @@
+// Mon Jan  8 19:40:03 UTC 2018
+// 4737-a0c-00b- // version bump - pared upload - minimal doco
+
 // Mon Jan  8 18:18:41 UTC 2018
 // 4737-a0c-00a- // out of sequence - shred taken from gen-exp branch
+
+// KREFL GLUNE
 
 // TAAVLOPHE
 
