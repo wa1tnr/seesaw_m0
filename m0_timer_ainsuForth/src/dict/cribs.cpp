@@ -37,6 +37,8 @@ void _cribs(void) {
   Serial.print(" : usloblink  6 gendiv   122 per0   timers ; \r\n");
   Serial.println("");
   Serial.println(" usloblink 20000 delay fastblink 10123 delay medblink\r\n");
+  Serial.println("");
+  Serial.println(" hex here 100 - 40 dump");
 
   Serial.print("    from:  m0_timer_ainsuForth/src/app/timer/timer.cpp" );
   // Serial.print("    x
