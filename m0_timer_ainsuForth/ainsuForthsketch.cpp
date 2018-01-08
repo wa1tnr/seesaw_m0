@@ -1,8 +1,11 @@
+// Mon Jan  8 21:33:44 UTC 2018
+// 4737-a0c-00e- // +cribs
+
+// version bump.
+
+// previous timestamps:
 // Mon Jan  8 20:10:36 UTC 2018
 // 4737-a0c-00c- // +cribs
-
-
-// previous timestamp:
 
 // Thu Jul  6 19:10:43 UTC 2017
 // 0103-a0c-01-
@@ -314,7 +317,7 @@ void setup(void) {
   pHere = &forthSpace[0];
   pOldHere = pHere;
   
-  Serial.print("\n warm boot message - early bird.  //  MONDIALE 9b2  TAAVLOPHE  KEPOK--HABILLEAUX"); // instant confirmation
+  Serial.print("\n warm boot message - early bird.  //  MONDIALE 9c0  TAAVLOPHE  KEPOK--HABILLEAUX"); // instant confirmation
 
   delay(9 * 100); // 900 ms - optional - useful when coded for a 4+ second delay
                   // to give the operator time to task switch from upload
