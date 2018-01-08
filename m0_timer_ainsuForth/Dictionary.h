@@ -1,5 +1,5 @@
 // Mon Jan  8 20:10:36 UTC 2018
-// 4737-a0c-00c- // +cribs
+// 4737-a0c-00c- // +cribs + freq
 
 // Thu Jul  6 19:10:43 UTC 2017
 // 0103-a0c-01-
@@ -21,6 +21,7 @@
 #include "src/periph/neo_pixel.h"
 #endif
 
+#include "src/periph/seesaw.h" // new 'freq' word defined 08 Jan 2018
 #include "src/dict/cribs.h" // new word defined 08 Jan 2018
 #include "src/dict/help.h"
 
