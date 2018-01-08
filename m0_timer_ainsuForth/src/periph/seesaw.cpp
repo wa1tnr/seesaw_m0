@@ -100,10 +100,14 @@ void _freq(void) {
   Serial.println();
   Serial.print("  placeholder for the freq word's behavior.\r\n");
   setup_seesaw_freq();
-  while(-1) {
+  Serial.print(" No further keyboard response is possible -- endless loop --\r\n");
+  Serial.print(" press RESET to regain control.  Or wait 40 cycles. ;)\r\n");
+  // while(-1) {
+  for (int i = 0; i < 40; i++) {
       loop_seesaw_freq();
       // Serial.println("Seen line 91");
       delay(800);
   }
+  // }
 }
 
