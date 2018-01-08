@@ -41,7 +41,8 @@ void _cribs(void) {
   Serial.println("");
   Serial.println(" usloblink 20000 delay fastblink 10123 delay medblink\r\n");
   Serial.println("");
-  Serial.println(" hex here 100 - 40 dump");
+  Serial.println(" hex here 100 - 40 dump\r\n");
+  Serial.println(" fastblink freq   << they run independently and simultaneously.\r\n");
 
   Serial.print("    from:  m0_timer_ainsuForth/src/app/timer/timer.cpp" );
   // Serial.print("    x
