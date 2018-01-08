@@ -39,12 +39,15 @@ void _cribs(void) {
   Serial.print(" : vsloblink  6 gendiv    44 per0   timers ; \r\n");
   Serial.print(" : usloblink  6 gendiv   122 per0   timers ; \r\n");
   Serial.println("");
+  Serial.print("    from:  m0_timer_ainsuForth/src/app/timer/timer.cpp" );
+  Serial.println("");
+
   Serial.println(" usloblink 20000 delay fastblink 10123 delay medblink\r\n");
   Serial.println("");
   Serial.println(" hex here 100 - 40 dump\r\n");
   Serial.println(" fastblink freq   << they run independently and simultaneously.\r\n");
+  Serial.println(" The 'warm' word is a soft reset and is the usual way to restart ainsuForth.\r\n");
 
-  Serial.print("    from:  m0_timer_ainsuForth/src/app/timer/timer.cpp" );
   // Serial.print("    x
 
 }
