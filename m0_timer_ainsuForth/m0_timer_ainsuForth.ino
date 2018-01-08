@@ -1,7 +1,12 @@
+// Mon Jan  8 23:02:05 UTC 2018
+// 4737-a0c-00g- // +cribs +dump_cribs +freq +analog_write_demo +seesaw_WORKING
+
 // Mon Jan  8 22:01:58 UTC 2018
 // 4737-a0c-00f- // +cribs +dump_cribs +freq
 
 // version bump.
+
+// derived
 
 // cyan teppe
 
