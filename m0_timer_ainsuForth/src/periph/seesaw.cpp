@@ -1,9 +1,15 @@
 // Tue Jan  9 02:02:45 UTC 2018
 // 4737-a0c-00g- // +cribs +dump_cribs +freq +analog_write_demo +seesaw_WORKING
 
+// TEST SIX.
+
 // Seems that the Seesaw simply isn't responding to  
 // ------------
 // setPWMFreq() 
+
+// closest ref besides the obvious one(s):
+// https://learn.adafruit.com/16-channel-pwm-servo-driver/library-reference
+
 // ------------
 // though too early to be certain that's so.
 
@@ -14,6 +20,11 @@
 // 4737-a0c-00f- // +cribs +dump_cribs +freq +analog_write_demo
 
 // https://learn.adafruit.com/adafruit-seesaw-atsamd09-breakout/arduino-wiring-test
+
+
+// oh boy no depth word present.  Makeshift.
+
+// 102   char depth = dStack_size(); // from a file named similar to 'stack ops'
 
 #include <Arduino.h>
 #include "../../yaffa.h"
@@ -79,13 +90,12 @@ int brightness = 1;    // how bright the LED is
 int brightness_FREQ = 10;   // for the FREQ thing not the LED.
 int fadeAmount = 36;    // how many points to fade the LED by
 
-void setup_seesaw_freq() {
-  
+void setup_seesaw() {
   if(!ss.begin()){
     Serial.println("ERROR!");
     while(1);
   }
-  else Serial.println("seesaw started");
+  else Serial.print("seesaw started");
 }
 
 
@@ -102,15 +112,18 @@ void loop_seesaw_freq() {
 
 // buzzer:
 
-void seesaw_freqb() {
-  ss.analogWrite(buzzer, 122); // duty cycle
-  delay(500);
+void seesaw_freq() {
+  // ss.analogWrite(buzzer, 32222, 16); // duty cycle // third parameter is 8 or 16 for 'width'
+  ss.analogWrite(buzzer, 90);
+  delay(50);
 }
 
-const char freq_str[] = "freq";
-void _freq(void) {
-  Serial.println();
-  setup_seesaw_freq();
+
+
+const char fade_str[] = "fade"; // rename to match elsewhere
+void _fade(void) {
+  setup_seesaw();
+  Serial.print(" "); // tidy
 
   for (int i = 0; i < 40; i++) {
       loop_seesaw_freq();
@@ -119,19 +132,51 @@ void _freq(void) {
 }
 
 
-const char freqb_str[] = "freqb"; // ( n -- )  n is the frequency, placed on TOS (top of stack)
-void _freqb(void) {
-  setup_seesaw_freq();
-  seesaw_freqb();
+const char freq_str[] = "freq"; // ( n -- )  n is the frequency, placed on TOS (top of stack)
+void _freq(void) {
+  char depth = dStack_size();
 
-  // ss.setPWMFreq(buzzer,dStack_pop()); // how values are passed internally
+  // validate TOS range 40-1000
+
+  if (depth < 1) {
+      // dStack_push(-1); // throw an error - abort
+      dStack_push(-4); // throw an error - stack underflow.
+      _throw();
+      _quit(); // we caught it in time - can quit nicely.
+      return;  // do not execute the code, below.  Done for this round. ;)
+  }
+
+  setup_seesaw(); // ideally this should be a separate word in forth.
 
   delay(500);
+
+  dStack_push(40);
+  _max();
+  dStack_push(1000);
+  _min();
+
+  _dupe();
+
+  // _dot_s(); // print the stack.  should be two stack items.
+
+  Serial.print(".  valid input: ");
+  Serial.print(dStack_pop()); // consumes one of the duplicates to print it here.
+  Serial.print("\r\n ");
+
+  // Serial.print(".s -- immediately prior to the call to setPWMFreq().\r\n");
+
+  // _dot_s(); // print the stack.  should be one stack item.
+
+  // stack has one last copy left, which it will use, here:
+
 
   ss.setPWMFreq(buzzer,dStack_pop()); // place an integer on the stack by 
                                       // typing it at the ok prompt and
                                       // pressing ENTER.
                                       // the dot-s word ('.s') confirms it is present.
+
+  seesaw_freq(); // ex. ss.analogWrite(buzzer, 90);
+
   delay(500);
 }
 

@@ -238,8 +238,8 @@ const flashEntry_t flashDict[] = {
 //   { of_str,             _of,              IMMEDIATE + COMP_ONLY },    // CAL
 //   { endof_str,          _endof,           IMMEDIATE + COMP_ONLY },    // CAL
 //   { endcase_str,        _endcase,         IMMEDIATE + COMP_ONLY },    // CAL
-  { freqb_str,          _freqb,           NORMAL }, // seesaw peripheral's 'freq' word 08 Jan 2018 - semi-nonfictional at the moment.
-  { freq_str,           _freq,            NORMAL }, // placeholder for seesaw peripheral's 'freq' word 08 Jan 2018 - fictional at the moment.
+  { freq_str,           _freq,           NORMAL }, // seesaw peripheral's 'freq' word 08 Jan 2018 - semi-nonfictional at the moment.
+  { fade_str,           _fade,            NORMAL },
   { help_str,           _help,            NORMAL },
   { cribs_str,          _cribs,           NORMAL }, // the cribs word definition was added 08 Jan 2018
 #endif

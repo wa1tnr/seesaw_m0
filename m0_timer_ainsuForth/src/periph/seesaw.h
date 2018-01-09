@@ -5,12 +5,12 @@
 // 4737-a0c-00e- // +cribs
 
 
-extern const char freq_str[]; // = "freq";
-extern void _freq(void);
+extern const char fade_str[]; // = "fade";
+extern void _fade(void);
 
 // unused:
-extern const char freqb_str[]; // = "freqb";
-extern void _freqb(void);
+extern const char freq_str[]; // = "freq";
+extern void _freq(void);
 
 // externals .. must tell the compiler about them for local use:
 extern void dStack_push(cell_t value);

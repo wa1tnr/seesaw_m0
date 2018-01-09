@@ -45,7 +45,7 @@ void _cribs(void) {
   Serial.println(" usloblink 20000 delay fastblink 10123 delay medblink\r\n");
   Serial.println("");
   Serial.println(" hex here 100 - 40 dump\r\n");
-  Serial.println(" fastblink freq   << they run independently and simultaneously.\r\n");
+  Serial.println(" fastblink fade   << they run independently and simultaneously.\r\n");
   Serial.println(" The 'warm' word is a soft reset and is the usual way to restart ainsuForth.\r\n");
 
   // Serial.print("    x
