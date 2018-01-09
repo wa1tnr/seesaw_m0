@@ -1,3 +1,8 @@
+// Tue Jan  9 19:53:04 UTC 2018
+// 4737-a0c-00s- // +cribs +freq +fade
+
+// seesaw moved down one level in src/periph
+
 // Tue Jan  9 18:46:26 UTC 2018
 // 4737-a0c-00p- // +cribs +freq +fade
 
@@ -29,7 +34,7 @@
 #include "src/periph/neo_pixel.h"
 #endif
 
-#include "src/periph/seesaw.h" // new 'freq' word defined 08 Jan 2018
+#include "src/periph/seesaw/seesaw.h" // new 'freq' word defined 08 Jan 2018
 #include "src/dict/cribs.h" // new word defined 08 Jan 2018
 #include "src/dict/help.h"
 

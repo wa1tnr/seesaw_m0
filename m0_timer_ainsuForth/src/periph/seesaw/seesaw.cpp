@@ -1,6 +1,9 @@
+// Tue Jan  9 19:53:04 UTC 2018
+// 4737-a0c-00s- // +cribs +freq +fade +seesaw_path_change
+
+
 // Tue Jan  9 04:30:43 UTC 2018
 // 4737-a0c-00j- // +cribs +freq +fade
-
 
 // Tue Jan  9 02:02:45 UTC 2018
 // 4737-a0c-00g- // +cribs +dump_cribs +freq +analog_write_demo +seesaw_WORKING
@@ -31,8 +34,8 @@
 // 102   char depth = dStack_size(); // from a file named similar to 'stack ops'
 
 #include <Arduino.h>
-#include "../../yaffa.h"
-#include "../../Dictionary.h"
+#include "../../../yaffa.h"
+#include "../../../Dictionary.h"
 
 #include "Adafruit_seesaw.h"
 
@@ -64,7 +67,7 @@ Adafruit_seesaw ss;
 /*******************************************************************************/
 
 /*
-  Fade
+  Fade - Adafruit Industries (supplied in the corresponding Library as Fade.ino)
 
   This example shows how to fade an LED on pin 6 of a seesaw board using the analogWrite()
   function.
