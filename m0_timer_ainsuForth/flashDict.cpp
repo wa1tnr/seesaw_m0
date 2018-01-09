@@ -1,5 +1,5 @@
 // Mon Jan  8 22:01:58 UTC 2018
-// 4737-a0c-00f- // +cribs +dump_cribs +freq
+// 4737-a0c-00f- // +cribs +dump_cribs +freq +freqb
 
 // Mon Jan  8 20:10:36 UTC 2018
 // 4737-a0c-00c- // +cribs
@@ -238,6 +238,7 @@ const flashEntry_t flashDict[] = {
 //   { of_str,             _of,              IMMEDIATE + COMP_ONLY },    // CAL
 //   { endof_str,          _endof,           IMMEDIATE + COMP_ONLY },    // CAL
 //   { endcase_str,        _endcase,         IMMEDIATE + COMP_ONLY },    // CAL
+  { freqb_str,          _freqb,           NORMAL }, // seesaw peripheral's 'freq' word 08 Jan 2018 - semi-nonfictional at the moment.
   { freq_str,           _freq,            NORMAL }, // placeholder for seesaw peripheral's 'freq' word 08 Jan 2018 - fictional at the moment.
   { help_str,           _help,            NORMAL },
   { cribs_str,          _cribs,           NORMAL }, // the cribs word definition was added 08 Jan 2018

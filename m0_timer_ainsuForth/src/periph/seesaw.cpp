@@ -1,5 +1,14 @@
-// Mon Jan  8 23:02:05 UTC 2018
+// Tue Jan  9 02:02:45 UTC 2018
 // 4737-a0c-00g- // +cribs +dump_cribs +freq +analog_write_demo +seesaw_WORKING
+
+// Seems that the Seesaw simply isn't responding to  
+// ------------
+// setPWMFreq() 
+// ------------
+// though too early to be certain that's so.
+
+// Mon Jan  8 23:02:05 UTC 2018
+
 
 // Mon Jan  8 22:24:07 UTC 2018
 // 4737-a0c-00f- // +cribs +dump_cribs +freq +analog_write_demo
@@ -64,13 +73,13 @@ Adafruit_seesaw ss;
 // used as well.  Untested except on the Metro M0 Express as of
 // 08 Jan 2018 23:01 UTC).
 
-int led = 6;           // the PWM pin the LED is attached to
+int led = 5;
+int buzzer = 6;
 int brightness = 1;    // how bright the LED is
+int brightness_FREQ = 10;   // for the FREQ thing not the LED.
 int fadeAmount = 36;    // how many points to fade the LED by
 
-// the setup routine runs once when you press reset:
 void setup_seesaw_freq() {
-  // Serial.begin(9600);
   
   if(!ss.begin()){
     Serial.println("ERROR!");
@@ -79,35 +88,71 @@ void setup_seesaw_freq() {
   else Serial.println("seesaw started");
 }
 
-// the loop routine runs over and over again forever:
+
 void loop_seesaw_freq() {
-  // set the brightness of pin 9:
   ss.analogWrite(led, brightness);
 
-  // change the brightness for next time through the loop:
   brightness = brightness + fadeAmount;
 
-  // reverse the direction of the fading at the ends of the fade:
   if (brightness <= 0 || brightness >= 255) {
     fadeAmount = -fadeAmount;
   }
-  // wait for 30 milliseconds to see the dimming effect
   delay(100);
+}
+
+// buzzer:
+
+void seesaw_freqb() {
+  ss.analogWrite(buzzer, 122); // duty cycle
+  delay(500);
 }
 
 const char freq_str[] = "freq";
 void _freq(void) {
   Serial.println();
-  Serial.print("  placeholder for the freq word's behavior.\r\n");
   setup_seesaw_freq();
-  Serial.print(" No further keyboard response is possible -- endless loop --\r\n");
-  Serial.print(" press RESET to regain control.  Or wait 40 cycles. ;)\r\n");
-  // while(-1) {
+
   for (int i = 0; i < 40; i++) {
       loop_seesaw_freq();
-      // Serial.println("Seen line 91");
       delay(800);
   }
-  // }
 }
+
+
+const char freqb_str[] = "freqb"; // ( n -- )  n is the frequency, placed on TOS (top of stack)
+void _freqb(void) {
+  setup_seesaw_freq();
+  seesaw_freqb();
+
+  // ss.setPWMFreq(buzzer,dStack_pop()); // how values are passed internally
+
+  delay(500);
+
+  ss.setPWMFreq(buzzer,dStack_pop()); // place an integer on the stack by 
+                                      // typing it at the ok prompt and
+                                      // pressing ENTER.
+                                      // the dot-s word ('.s') confirms it is present.
+  delay(500);
+}
+
+
+/*
+
+doco
+
+setPWMFreq()
+void Adafruit_seesaw::setPWMFreq ( uint8_t pin, uint16_t freq ) 		
+
+set the PWM frequency of a PWM-enabled pin. Note that on SAMD09, SAMD11 boards the frequency will be mapped to closest match fixed frequencies. Also note that PWM pins 4 and 5 share a timer, and PWM pins 6 and 7 share a timer. Changing the frequency for one pin will change the frequency for the other pin that is on the timer.
+
+Parameters
+    pin    the number of the pin to change frequency of. On the SAMD09 breakout,
+           this corresponds to the number on the silkscreen. on the default seesaw
+           firmware on the SAMD09 breakout, pins 5, 6, and 7 are PWM enabled.
+    freq    the frequency to set.
+
+Returns
+    none 
+
+*/
 

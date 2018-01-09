@@ -8,3 +8,10 @@
 extern const char freq_str[]; // = "freq";
 extern void _freq(void);
 
+// unused:
+extern const char freqb_str[]; // = "freqb";
+extern void _freqb(void);
+
+// externals .. must tell the compiler about them for local use:
+extern void dStack_push(cell_t value);
+extern cell_t dStack_pop(void);
