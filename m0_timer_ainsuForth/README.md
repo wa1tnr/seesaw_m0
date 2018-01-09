@@ -36,9 +36,9 @@ found in this repository is the
 which is ATSAMD21G18A ARM Cortex M0+ based.
 ----------------------------------------------------------------
 
-Mon Jan  8 19:02:40 UTC 2018
+Tue Jan  9 18:46:26 UTC 2018
 
-f2c8a
+06121f73cc
 
 old:
 

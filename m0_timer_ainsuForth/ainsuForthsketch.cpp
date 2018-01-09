@@ -1,12 +1,17 @@
+// Tue Jan  9 18:46:26 UTC 2018
+// 4737-a0c-00p- // +cribs +freq +fade
+
+// PIBOK
+
+// version bump.
+
+// previous timestamps:
 // Mon Jan  8 23:02:05 UTC 2018
 // 4737-a0c-00g- // +cribs +dump_cribs +freq +analog_write_demo +seesaw_WORKING
 
 // Mon Jan  8 22:01:58 UTC 2018
 // 4737-a0c-00f- // +cribs +dump_cribs +freq
 
-// version bump.
-
-// previous timestamps:
 // Mon Jan  8 21:33:44 UTC 2018
 // 4737-a0c-00e- // +cribs
 
@@ -16,8 +21,6 @@
 // Thu Jul  6 19:10:43 UTC 2017
 // 0103-a0c-01-
 // 4735-b0a-00-
-
-// PIBOK
 
 // A4 - LCD backlight
 // A5 - buzzPin (also an LED)

@@ -1,0 +1,2 @@
+https://github.com/adafruit/seesaw/issues/4
+https://github.com/adafruit/seesaw/files/1616082/seesaw_new_firmware.zip
