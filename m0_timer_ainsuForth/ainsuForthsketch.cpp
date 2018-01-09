@@ -1,6 +1,8 @@
 // Tue Jan  9 18:46:26 UTC 2018
 // 4737-a0c-00p- // +cribs +freq +fade
 
+// FARGO
+
 // PIBOK
 
 // version bump.
@@ -300,11 +302,14 @@ void setup(void) {
   // magentaDull();
   Serial.begin(19200);        // Open serial communications:
 
+  // Q: Serial.print("how long does it take to see me?\r\n");
+  // A: not long.
+
   // Serial.begin(57600);
   // Serial.begin(115200);
 
-  blinkenlightShort(); // 08 Jan 2018
-  blinkenlightShort(); // 08 Jan 2018
+  // blinkenlightShort(); // 08 Jan 2018
+  // blinkenlightShort(); // 08 Jan 2018
 
   while (!Serial) {
     blink_m();
@@ -326,9 +331,9 @@ void setup(void) {
   pHere = &forthSpace[0];
   pOldHere = pHere;
   
-  Serial.print("\n warm boot message - early bird.  //  MONDIALE 9de3f  TAAVLOPHE  KEPOK--HABILLEAUX"); // instant confirmation
+  Serial.print("\n warm boot message  //  MONDIALE 9 18:46:26  FARGO  TAAVLOPHE--HABILLEAUX"); // instant confirmation
 
-  delay(9 * 100); // 900 ms - optional - useful when coded for a 4+ second delay
+  // delay(9 * 100); // 900 ms - optional - useful when coded for a 4+ second delay
                   // to give the operator time to task switch from upload
                   // to first signon.
   signOn();

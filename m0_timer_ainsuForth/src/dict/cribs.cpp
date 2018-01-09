@@ -46,6 +46,7 @@ void _cribs(void) {
   Serial.println("");
   Serial.println(" hex here 100 - 40 dump\r\n");
   Serial.println(" fastblink fade   << they run independently and simultaneously.\r\n");
+  Serial.println(" fastblink fade decimal 43 emit   << prints '+' after routine completes.\r\n");
   Serial.println(" The 'warm' word is a soft reset and is the usual way to restart ainsuForth.\r\n");
 
   // Serial.print("    x
