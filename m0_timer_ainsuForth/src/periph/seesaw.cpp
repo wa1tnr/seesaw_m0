@@ -169,7 +169,6 @@ void _freq(void) {
 
   // stack has one last copy left, which it will use, here:
 
-
   ss.setPWMFreq(buzzer,dStack_pop()); // place an integer on the stack by 
                                       // typing it at the ok prompt and
                                       // pressing ENTER.
