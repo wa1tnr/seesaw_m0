@@ -94,8 +94,19 @@ Adafruit_seesaw ss;
 // used as well.  Untested except on the Metro M0 Express as of
 // 08 Jan 2018 23:01 UTC).
 
+
+// ============================================================================
+// =======================  12 January Friday 23:49 UTC  ======================
+// ============================================================================
+// The BUZZER was there to troubleshoot and annuciate the 50 Hz pwm signal
+// meant for the servo motor.  For the moment, this pin will continue to
+// be referred to as the BUZZER - with the understanding that, for the more
+// advanced use, one connects the servo motor to the same two terminals
+// formerly occupied by the piezo buzzer device.
+// ============================================================================
+
 int led = 5;
-int buzzer = 6;
+int buzzer = 6; // Note!  buzzer is the servo motor - use EITHER device here
 int brightness = 1;    // how bright the LED is
 int brightness_FREQ = 10;   // for the FREQ thing not the LED.
 int fadeAmount = 36;    // how many points to fade the LED by
