@@ -1,3 +1,6 @@
+// Fri Jan 12 21:54:45 UTC 2018
+// 4737-a0d-00a- // +cribs +freq +fade +pw
+
 // Tue Jan  9 19:53:04 UTC 2018
 // 4737-a0c-00s- // +cribs +freq +fade +seesaw_path_change
 
@@ -138,7 +141,36 @@ void _fade(void) {
   }
 }
 
+const char pw_str[] = "pw"; // ( n -- )  n is the pulse width/duty cycle, placed on TOS (top of stack)
+void _pw(void) {
+  // empty skeleton function for the moment.  Get all structures in place by modifying 4 files or so.
+  // okay the hooks are present for the pw word.  Now, make it useful.
+  char depth = dStack_size();
 
+  // validate TOS range 1-180
+
+  if (depth < 1) {
+      dStack_push(-4); // throw an error - stack underflow.
+      _throw();
+      _quit(); // we caught it in time - can quit nicely.
+      return;  // do not execute the code, below.  Done for this round. ;)
+  }
+
+  dStack_push(0);
+  _max();
+  dStack_push(199);
+  // map 22 to 180
+  _min();
+  _dupe();
+  Serial.print(".  valid input, pw: ");
+  Serial.print(dStack_pop()); // consumes one of the duplicates to print it here.
+  Serial.print("\r\n ");
+  // the system wanted to range from 5 to 27.  Normalized to zero reference (0 to 22).
+  // add back the 5 when writing:
+  // ss.analogWrite(buzzer,(dStack_pop()+5)); // duty cycle (position of the servo arm/horn)
+  ss.analogWrite(buzzer,(dStack_pop()+0)); // duty cycle (position of the servo arm/horn)
+  delay(500);
+}
 const char freq_str[] = "freq"; // ( n -- )  n is the frequency, placed on TOS (top of stack)
 void _freq(void) {
   char depth = dStack_size();
@@ -166,7 +198,7 @@ void _freq(void) {
 
   // _dot_s(); // print the stack.  should be two stack items.
 
-  Serial.print(".  valid input: ");
+  Serial.print(".  valid input, freq: ");
   Serial.print(dStack_pop()); // consumes one of the duplicates to print it here.
   Serial.print("\r\n ");
 
@@ -181,7 +213,9 @@ void _freq(void) {
                                       // pressing ENTER.
                                       // the dot-s word ('.s') confirms it is present.
 
-  seesaw_freq(); // ex. ss.analogWrite(buzzer, 90);
+  // seesaw_freq(); // ex. ss.analogWrite(buzzer, 90);
+  dStack_push(1); // throw an error - stack underflow.
+  _pw();
 
   delay(500);
 }

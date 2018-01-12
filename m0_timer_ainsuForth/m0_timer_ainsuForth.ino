@@ -1,3 +1,6 @@
+// Fri Jan 12 21:54:45 UTC 2018
+// 4737-a0d-00a- // +cribs +freq +fade +pw  +tower
+
 // Tue Jan  9 19:53:04 UTC 2018
 // 4737-a0c-00s- // +cribs +freq +fade +seesaw_path_change
 

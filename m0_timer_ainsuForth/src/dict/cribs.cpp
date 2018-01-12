@@ -1,3 +1,8 @@
+// Fri Jan 12 21:54:45 UTC 2018
+// 4737-a0d-00a- // +cribs +freq +fade +pw
+
+// servo motor stuff: pw, freq
+
 // Mon Jan  8 22:01:58 UTC 2018
 // 4737-a0c-00f- // +cribs +dump_cribs +freq
 
@@ -47,6 +52,9 @@ void _cribs(void) {
   Serial.println(" hex here 100 - 40 dump\r\n");
   Serial.println(" fastblink fade   << they run independently and simultaneously.\r\n");
   Serial.println(" fastblink fade decimal 43 emit   << prints '+' after routine completes.\r\n");
+  Serial.println(" : cmp 37 pw 222 delay pw ;   << fast compare two different pw - call with a value on TOS.\r\n");
+  Serial.println("50 freq  << supposed to be canonical, but in practice freq can be a wide variety of values.\r\n");
+  Serial.println("122 freq 54 pw 222 delay 10 pw  << seems very responsive");
   Serial.println(" The 'warm' word is a soft reset and is the usual way to restart ainsuForth.\r\n");
 
   // Serial.print("    x

@@ -1,13 +1,18 @@
-// Tue Jan  9 18:46:26 UTC 2018
-// 4737-a0c-00p- // +cribs +freq +fade
+// Fri Jan 12 21:54:45 UTC 2018
+// 4737-a0d-00a- // +cribs +freq +fade +pw
+
+
+// TOWER  .. the servo motor
+
 
 // FARGO
 
 // PIBOK
 
-// version bump.
-
 // previous timestamps:
+// Tue Jan  9 18:46:26 UTC 2018
+// 4737-a0c-00p- // +cribs +freq +fade
+
 // Mon Jan  8 23:02:05 UTC 2018
 // 4737-a0c-00g- // +cribs +dump_cribs +freq +analog_write_demo +seesaw_WORKING
 
@@ -331,7 +336,7 @@ void setup(void) {
   pHere = &forthSpace[0];
   pOldHere = pHere;
   
-  Serial.print("\n warm boot message  //  MONDIALE 9 20:13:44  FARGO  TAAVLOPHE--HABILLEAUX"); // instant confirmation
+  Serial.print("\n warm boot message  //  MONDIALE 12 21:54:45  TOWER   FARGO  TAAVLOPHE--HABILLEAUX"); // instant confirmation
 
   // delay(9 * 100); // 900 ms - optional - useful when coded for a 4+ second delay
                   // to give the operator time to task switch from upload
