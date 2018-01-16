@@ -16,3 +16,10 @@ The previous program, seesaw_pwm_freq_bb.ino, did not do this.
 It was not directly interesting to moving a servo motor's arm.
 
 This program corrects that deficit.
+
+
+calibration of PWM 16 bit analogWrite:
+
+  2.9 percent to 10.7 percent duty cycle, full excursion.
+
+

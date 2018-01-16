@@ -5,6 +5,11 @@
 // previous:
 // Tue Jan 16 16:45:28 UTC 2018
 
+// calibration of PWM 16 bit analogWrite:
+
+// 2.9 percent to 10.7 percent duty cycle, full excursion.
+
+
 // Seesaw PWM Frequency setter program
 // with active Duty Cycle variances - to sweep the servo motor arm
 
