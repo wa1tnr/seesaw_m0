@@ -1,0 +1,18 @@
+MUST USE SERIAL TERMINAL to start program.  It waits forever
+for you to connect.
+
+
+Relevant lib:
+  ~/Arduino/libraries/Adafruit_Seesaw/Adafruit_seesaw.cpp
+
+  The program, seesaw_pwm_freq_cc.ino, shows that the way the
+Adafruit Arduino library talks to the Seesaw Breakout is via
+a simplified i2c interface.
+
+In this revision, focus is placed on the duty cycle, to get
+the servo motor to do something interesting.
+
+The previous program, seesaw_pwm_freq_bb.ino, did not do this.
+It was not directly interesting to moving a servo motor's arm.
+
+This program corrects that deficit.
