@@ -1,0 +1,9 @@
+
+Relevant lib:
+  ~/Arduino/libraries/Adafruit_Seesaw/Adafruit_seesaw.cpp
+
+  The program, seesaw_pwm_freq_bb.ino, shows that the way the
+Adafruit Arduino library talks to the Seesaw Breakout is via
+a simplified i2c interface.
+
+
